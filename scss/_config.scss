@@ -1,0 +1,22 @@
+// Variables
+
+$website-width:1280px;
+$main-color: #ffbc00;
+$light-color:#f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333; 
+// Since this sass folder will be complied into css folder inside  the dist. We do not right ../dist because this codes will be compiled inside of the dist folder after we save this sass.
+$bg-image: url('../img/showcase.jpg');
+
+
+
+// Set Text Color
+
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+  // We write this function since when we want to change the any variable color, we do not want to lost our text, or etc. To avoid, we write a function helping us to obtain contrasts colors (dark and light colors).
+}
